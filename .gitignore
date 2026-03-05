@@ -1,0 +1,50 @@
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environments
+venv/
+env/
+.venv/
+
+# Dataset files
+data/raw/
+data/processed/
+data/splits/
+
+# Model checkpoints
+checkpoints/
+*.pth
+*.pt
+*.ckpt
+
+# Numpy embeddings
+*.npy
+*.npz
+
+# Logs
+logs/
+*.log
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# IDE files
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Streamlit / Gradio temp
+.streamlit/
+gradio_cached_examples/
+
+# Large satellite data
+*.tif
+*.tiff
+*.h5
+*.hdf5
