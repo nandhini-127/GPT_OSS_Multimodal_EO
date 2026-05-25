@@ -7,23 +7,22 @@ class VisionModel(nn.Module):
     def __init__(self):
         super().__init__()
 
-        self.model = timm.create_model(
+        # 🔥 Backbone (no classifier)
+        self.backbone = timm.create_model(
             MODEL_NAME,
             pretrained=True,
-            num_classes=NUM_CLASSES
+            num_classes=0
         )
 
+        # 🔥 Your classifier head
+        self.classifier = nn.Linear(self.backbone.num_features, NUM_CLASSES)
+
     def forward(self, x):
-        return self.model(x)
+        features = self.backbone(x)
+        return self.classifier(features)
 
     def extract_features(self, x):
-        features = self.model.forward_features(x)
-
-        # If transformer → shape (B, tokens, dim)
-        if len(features.shape) == 3:
-            features = features.mean(dim=1)
-
-        return features
+        return self.backbone(x)
 
 
 def build_model():
