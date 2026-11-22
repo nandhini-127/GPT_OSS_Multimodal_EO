@@ -110,12 +110,6 @@ print("Vision model loaded successfully!")
 - `data/processed/text_embeddings.pt` - Text embeddings
 - `checkpoints/vision_best.pth` - Trained vision model
 
-## Next Steps
-
-1. Implement multimodal fusion training
-2. Build inference pipeline
-3. Add evaluation metrics
-4. Create web interface with Streamlit
 
 ## Requirements
 
